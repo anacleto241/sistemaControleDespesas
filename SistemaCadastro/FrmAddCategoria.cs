@@ -89,7 +89,10 @@ namespace SistemaCadastro
                     lista_gridCategorias();
                 }// fim if retorno true
                 else
-                    MessageBox.Show(con.mensagem);
+                    if (con.mensagem.Contains("Cannot delete or update a parent row"))
+                        MessageBox.Show("Não é possível excluir uma categoria que possui despesas cadastradas");
+                    else
+                        MessageBox.Show(con.mensagem);
             }// fim if Ok Cancela
             else
                 MessageBox.Show("Exclusão cancelada");
