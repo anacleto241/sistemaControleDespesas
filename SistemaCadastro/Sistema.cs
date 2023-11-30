@@ -13,7 +13,7 @@ namespace SistemaCadastro
 {
     public partial class Sistema : Form
     {
-
+        int idAlterar;
         public Sistema()
         {
             InitializeComponent();
@@ -66,6 +66,10 @@ namespace SistemaCadastro
             cbCategoriaDespesa.DataSource = tabelaDados;
             cbCategoriaDespesa.DisplayMember = "nomeCategoria";
             cbCategoriaDespesa.ValueMember = "CategoriaID";
+
+            cbAlteraCategoria.DataSource = tabelaDados;
+            cbAlteraCategoria.DisplayMember = "nomeCategoria";
+            cbAlteraCategoria.ValueMember = "CategoriaID";
         }
 
 
@@ -101,19 +105,38 @@ namespace SistemaCadastro
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            
+            int linha = dgDespesas.CurrentRow.Index;
+            idAlterar = Convert.ToInt32(
+                                   dgDespesas.Rows[linha].Cells["despesaID"].Value.ToString());
+            txtAlteraDescricao.Text = dgDespesas.Rows[linha].Cells["descricaoDespesa"].Value.ToString();
+            txtAlteraValor.Text = dgDespesas.Rows[linha].Cells["valor"].Value.ToString();
+            cbAlteraCategoria.Text = dgDespesas.Rows[linha].Cells["nomeCategoria"].Value.ToString();
+            tabControl1.SelectedTab = tabAlterar;
         }
 
          private void btnConfirmaAlteracao_Click(object sender, EventArgs e)
         {
-           
+            ConectaBanco con = new ConectaBanco();
+            Despesas novaDespesas = new Despesas();
+            novaDespesas.DescricaoDespesa1 = txtAlteraDescricao.Text;
+            novaDespesas.CategoriaID1 = Convert.ToInt32(cbAlteraCategoria.SelectedValue.ToString());
+            novaDespesas.Valor1 = Convert.ToDouble(txtAlteraValor.Text);
+            bool retorno = con.alteraDespesas(novaDespesas, idAlterar);
+            if (retorno == false)
+                MessageBox.Show(con.mensagem);
+            else
+                MessageBox.Show("Despesa alterada com sucesso!");
+            lista_gridDespesas();
 
 
         }
 
         private void bntAddGenero_Click(object sender, EventArgs e)
         {
-          
+            FrmAddCategoria formCategoria = new FrmAddCategoria();
+            this.Hide();
+            formCategoria.ShowDialog();
+            this.Close();
         }
 
         void limpaCampos()
@@ -130,7 +153,6 @@ namespace SistemaCadastro
             novaDespesas.DescricaoDespesa1 = txtdescricaodespesa.Text;
             novaDespesas.CategoriaID1 = Convert.ToInt32(cbCategoriaDespesa.SelectedValue.ToString());
             novaDespesas.Valor1 = Convert.ToDouble(txtvalor.Text);
-            con.insereDespesas(novaDespesas);
             bool retorno = con.insereDespesas(novaDespesas);
             if (retorno == false)
                 MessageBox.Show(con.mensagem);
@@ -153,5 +175,16 @@ namespace SistemaCadastro
         {
 
         }
+
+        private void dgDespesas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtAlteraNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
