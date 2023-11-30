@@ -52,6 +52,7 @@ namespace SistemaCadastro
             }
 
             limpaCampos();
+            lista_gridCategorias();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
