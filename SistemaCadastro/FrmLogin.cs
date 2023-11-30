@@ -29,7 +29,7 @@ namespace SistemaCadastro
             {
                 Sistema formSistema = new Sistema();
                 this.Hide();
-                formSistema.ShowDialog();
+                formSistema.ShowDialog();//
                 this.Close();
             }
             else
