@@ -97,6 +97,8 @@ Projeto desenvolvido durante a disciplina de Linguagens e Técnicas de Programa�
 ## ⚙️ Funcionalidades
   - [x] Cadastro de despesas
   - [x] Cadastro de categorias
+  - [x] Listagem de despesas
+  - [x] Listagem de categorias
   - [x] Alteração de despesas
   - [x] Alteração de categorias
   - [x] Exclusão de despesas
