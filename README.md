@@ -32,9 +32,6 @@ Tabela de conteúdos
    * [Sobre o projeto](#-sobre-o-projeto)
    * [Funcionalidades](#-funcionalidades)
    * [Tecnologias](#-tecnologias)
-     * [Server](#user-content-server--react----typescript)
-     * [Instalador](#user-content-instalador--nodejs----typescript)
-     * [Utilitários](#user-content-utilitarios--react-native----typescript)
    * [Autores](#-autores)
    * [Licença](#user-content--licença)
 <!--te-->
