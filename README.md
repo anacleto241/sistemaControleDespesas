@@ -31,6 +31,7 @@ Tabela de conteúdos
 <!--ts-->
    * [Sobre o projeto](#-sobre-o-projeto)
    * [Funcionalidades](#-funcionalidades)
+   * [Telas](#-telas)
    * [Tecnologias](#-tecnologias)
    * [Autores](#-autores)
    * [Licença](#-licença)
@@ -43,6 +44,8 @@ Tabela de conteúdos
 
 
 Projeto desenvolvido durante a disciplina de Linguagens e Técnicas de Programação oferecida pelo professor Matheus Eloy Franco.
+
+---
 
 #### **Telas**
 <h5 align="center">
@@ -89,11 +92,9 @@ Projeto desenvolvido durante a disciplina de Linguagens e Técnicas de Programa�
     <img alt="Alteração de categorias" src="https://github.com/anacleto241/sistemaControleDespesas/assets/131410501/eeb22d14-5e37-4737-b2ea-6006148c5956">
   </a>
 </p>
-
 ---
 
 ## ⚙️ Funcionalidades
-
   - [x] Cadastro de despesas
   - [x] Cadastro de categorias
   - [x] Alteração de despesas
